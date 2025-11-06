@@ -11,14 +11,14 @@ public abstract class Character {
     protected Weapon weapon;
     protected boolean isAlive;
 
-    //liste statiques des noms utilisés dans la partie
+    //static list of usedNames in the party
 
     private static Set<String> usedNames = new HashSet<>();
 
-    //region constructeur
+    //region constructor
 
 
-    public Character(String name, Weapon weapon, int hp, String type) {
+    public Character(String name, Weapon weapon, int hp, String type, boolean isAlive) {
         this.name = name;
         this.weapon = weapon;
         this.hp = hp;
@@ -26,7 +26,7 @@ public abstract class Character {
         this.isAlive = true;
     }
 
-    //endregion constructeur
+    //endregion constructor
 
     //region Setters and getters
 
@@ -58,6 +58,7 @@ public abstract class Character {
 
     // Implementing abstract method action()
     public abstract void action();
+    //public abstract String getType();
 
     //endregion Methods
 }
