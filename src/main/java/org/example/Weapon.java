@@ -13,11 +13,11 @@ public final class Weapon {
         this.power = power;
     }
 
-    public String getNom() {
+    public String getName() {
         return name;
     }
 
-    public int getPuissance() {
+    public int getPower() {
         return power;
     }
 
