@@ -16,8 +16,7 @@ public abstract class Character {
     private static Set<String> usedNames = new HashSet<>();
 
     //region constructeur
-    public Character() {
-    }
+
 
     public Character(String name, Weapon weapon, int hp, String type) {
         this.name = name;
