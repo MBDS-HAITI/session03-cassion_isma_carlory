@@ -4,8 +4,8 @@ public class Colossus extends Character implements Attacker {
     //TODO
 
 
-    public Colossus(String name, Weapon weapon, int hp, String type, boolean isAlive) {
-        super(name, weapon, hp, type,isAlive);
+    public Colossus(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
+        super(name, weapon, hp, type,isAlive,maxHp);
     }
 
     @Override
