@@ -2,10 +2,12 @@ package org.example;
 
 public class Dwarf extends Character implements Attacker {
 
+   public Dwarf(String name){
+       super();
+   }
 
-
-    public Dwarf(String name, Weapon weapon, int hp, String type, boolean isAlive) {
-        super(name, weapon, hp, type,isAlive);
+    public Dwarf(String name, Weapon weapon, int hp, String type, boolean isAlive,int maxHp) {
+        super(name, weapon, hp, type,isAlive,maxHp);
     }
 
     @Override
@@ -15,8 +17,8 @@ public class Dwarf extends Character implements Attacker {
 
 
     @Override
-    public void attack(Character ennemie) {
-        if (!this.isAlive() || ennemie == null || !ennemie.isAlive()) return;
-        ennemie.takeDamage(getWeapon().getPower());
+    public void attack(Character enemy) {
+        if (!this.isAlive() || enemy == null || !enemy.isAlive()) return;
+        enemy.takeDamage(getWeapon().getPower());
     }
 }

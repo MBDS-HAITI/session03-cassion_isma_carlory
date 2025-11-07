@@ -3,6 +3,10 @@ package org.example;
 public class Colossus extends Character implements Attacker {
     //TODO
 
+    public  Colossus(String name){
+        super();
+
+    }
 
     public Colossus(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
         super(name, weapon, hp, type,isAlive,maxHp);
@@ -12,10 +16,10 @@ public class Colossus extends Character implements Attacker {
     public void action() {
     }
 
-    //we implement the method to attc
+    //we implement the method to attack
     @Override
-    public void attack(Character ennemie) {
-        if (!this.isAlive() || ennemie == null || !ennemie.isAlive()) return;
-        ennemie.takeDamage(getWeapon().getPower());
+    public void attack(Character enemy) {
+        if (!this.isAlive() || enemy == null || !enemy.isAlive()) return;
+        enemy.takeDamage(getWeapon().getPower());
     }
 }

@@ -28,6 +28,10 @@ public abstract class Character {
         this.isAlive = true;
     }
 
+    public Character() {
+
+    }
+
     //endregion constructor
 
     //region Setters and getters
