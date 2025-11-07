@@ -8,6 +8,7 @@ public abstract class Character {
     protected String name;
     protected String type;
     protected int hp;
+    protected int maxHp;
     protected Weapon weapon;
     protected boolean isAlive;
 
@@ -18,10 +19,11 @@ public abstract class Character {
     //region constructor
 
 
-    public Character(String name, Weapon weapon, int hp, String type, boolean isAlive) {
+    public Character(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
         this.name = name;
         this.weapon = weapon;
         this.hp = hp;
+        this.maxHp = maxHp;
         this.type = type;
         this.isAlive = true;
     }
@@ -29,6 +31,9 @@ public abstract class Character {
     //endregion constructor
 
     //region Setters and getters
+    public Weapon getWeapon() {
+        return weapon;
+    }
 
     public String getType() {
         return type;
@@ -46,6 +51,7 @@ public abstract class Character {
         this.hp = hp;
     }
 
+
     public boolean isAlive() {
         return isAlive;
     }
@@ -59,6 +65,21 @@ public abstract class Character {
     // Implementing abstract method action()
     public abstract void action();
     //public abstract String getType();
+
+    // --- Encapsulation: only controlled ways to change HP ---
+    public void takeDamage(int amount) {
+        if (!isAlive()) return;
+        if (amount < 0) amount = 0;
+        hp = Math.max(0, hp - amount);
+        if (hp == 0) isAlive = false;
+    }
+
+    public void heal(int amount) {
+        if (!isAlive) return;
+        if (amount < 0) amount = 0;
+        hp = Math.min(maxHp, hp + amount);
+    }
+
 
     //endregion Methods
 }
