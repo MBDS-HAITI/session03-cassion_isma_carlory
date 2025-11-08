@@ -15,7 +15,7 @@ public  class Player {
         if(Player.names.contains(name.toLowerCase())) {
             throw  new IllegalArgumentException("Player already exists");
         }
-        if (characters.size() != 3) {
+        if (characters.size() > 3) {
             throw new IllegalArgumentException("The number of characters must be 3");
         }
         if(!this.isCharactersTypeUnique()) {
@@ -36,9 +36,13 @@ public  class Player {
 //  Verify that Character type is unique for the player
     private boolean isCharactersTypeUnique() {
         for (Character character : this.characters) {
+            if(this.characterTypes.contains(character.getType())) {
+                return false;
+            }
             this.characterTypes.add(character.getType());
         }
-        return this.characterTypes.size() == this.characters.size();
+
+        return true ;
     }
 
     public String getName() {
@@ -46,7 +50,7 @@ public  class Player {
     }
 //    Allow to add a Character
     public void addCharacter(Character character) {
-        if(!this.characterTypes.contains(character.getType())) {
+        if(this.characterTypes.contains(character.getType())) {
             throw new IllegalArgumentException("The type of characters must be unique");
         }
         if(this.characters.size()>=3){
