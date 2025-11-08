@@ -66,8 +66,8 @@ public class Main {
 
         //Start the battle
 
-       /* Battle battle = new Battle(player1,player2);
-        battle.start();*/
+        Battle battle = new Battle(player1,player2);
+        battle.start();
 
 
     }
