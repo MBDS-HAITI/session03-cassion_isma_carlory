@@ -25,7 +25,7 @@ public abstract class Character {
         this.maxHp = type.getMaxHP();
         this.type = type;
         this.isAlive = true;
-        this.weapon= new Weapon(type.getWeaponName(), type.getWeaponPower());
+        this.weapon= new Weapon("Kalash", type.getWeaponPower());
         if(usedNames.contains(name.toLowerCase())){
             throw new IllegalStateException("Character name already used!");
         }
