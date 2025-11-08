@@ -1,4 +1,5 @@
 package org.example;
 
-public class Healer {
+public interface Healer {
+    public void heal(Character friend);
 }

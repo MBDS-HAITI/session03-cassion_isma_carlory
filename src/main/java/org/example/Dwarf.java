@@ -1,22 +1,21 @@
 package org.example;
 
-public class Colossus extends Character implements Attacker {
-    //TODO
+public class Dwarf extends Character implements Attacker {
 
-    public  Colossus(String name){
-        super();
+   public Dwarf(String name){
+       super();
+   }
 
-    }
-
-    public Colossus(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
+    public Dwarf(String name, Weapon weapon, int hp, String type, boolean isAlive,int maxHp) {
         super(name, weapon, hp, type,isAlive,maxHp);
     }
 
     @Override
     public void action() {
+
     }
 
-    //we implement the method to attack
+
     @Override
     public void attack(Character enemy) {
         if (!this.isAlive() || enemy == null || !enemy.isAlive()) return;
