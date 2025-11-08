@@ -6,7 +6,7 @@ import java.util.Set;
 public abstract class Character {
     // Attributs
     protected String name;
-    protected String type;
+    protected Type type;
     protected int hp;
     protected int maxHp;
     protected Weapon weapon;
@@ -19,13 +19,13 @@ public abstract class Character {
     //region constructor
 
 
-    public Character(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
+    public Character(String name, Weapon weapon, int hp, Type type, boolean isAlive, int maxHp) {
         this.name = name;
-        this.weapon = weapon;
         this.hp = hp;
         this.maxHp = maxHp;
         this.type = type;
         this.isAlive = true;
+        this.weapon=weapon;
     }
 
     public Character() {
@@ -39,11 +39,11 @@ public abstract class Character {
         return weapon;
     }
 
-    public String getType() {
+    public Type getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
