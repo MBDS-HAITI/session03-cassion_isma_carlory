@@ -12,6 +12,12 @@ public  class Player {
     private final Set<Type> characterTypes = new HashSet<>();
     public Player(String name,List<Character> characters) {
         this.characters = characters;
+        if(name.isBlank()){
+            throw new IllegalArgumentException("Player name cannot be blank");
+        }
+        if(name.length()<3){
+            throw new IllegalArgumentException("Player name length cannot be less than 3");
+        }
 //        Verify that the name did not exist in the names property
         if(Player.names.contains(name.toLowerCase())) {
             throw  new IllegalArgumentException("Player already exists");
