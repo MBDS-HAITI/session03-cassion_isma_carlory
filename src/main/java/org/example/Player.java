@@ -94,4 +94,7 @@ public  class Player {
         }
         return activeCharacters;
     }
+    public List<Character> getCharacters() {
+        return this.characters;
+    }
 }
