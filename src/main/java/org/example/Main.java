@@ -108,7 +108,6 @@ public class Main {
                         break;
                     default:
                         System.out.println("La choix n'est pas une choix valide. reessayez !");
-                        chosenType = null;
                         break;
 
                 }

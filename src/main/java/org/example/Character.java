@@ -84,6 +84,10 @@ public abstract class Character {
         hp = Math.min(maxHp, hp + amount);
     }
 
+    public String getName() {
+        return name;
+    }
+
 
     //endregion Methods
 }
