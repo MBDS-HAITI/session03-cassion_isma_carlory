@@ -2,20 +2,20 @@ package org.example;
 
 public enum Type {
 
-    WARRIOR("bazouka",90,90),
-    MAGUS("baz",90,90),
-    COLOSSUS("calash",90,90),
-    DWARF("nick",90,90);
+    WARRIOR("Attaquant équilibré",100,1000),
+    MAGUS("Peut soigner ses alliés",50,1500),
+    COLOSSUS("Très résistant",100,2000),
+    DWARF("Très fort mais fragile",200,750);
 
     private final int startingHP;
     private final int maxHP;
     private final int weaponPower;
-    private final String weaponName;
-    Type(String weaponName, int weaponPower,int startingHP){
+    private final String description;
+    Type(String description, int weaponPower, int startingHP){
         this.weaponPower = weaponPower;
         this.startingHP=startingHP;
         this.maxHP=startingHP;
-        this.weaponName=weaponName;
+        this.description = description;
     }
 
     public int getStartingHP() {
@@ -27,8 +27,8 @@ public enum Type {
     public int getMaxHP(){
         return this.maxHP;
     }
-    public String getWeaponName(){
-        return this.weaponName;
+    public String getDescription(){
+        return this.description;
     }
 
 }
