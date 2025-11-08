@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public  class Player {
-    private List<Character> characters;
+    private List<Character> characters = new ArrayList<>();
     private static final Set<String> names = new HashSet<>();
     private final String name;
     private final Set<Type> characterTypes = new HashSet<>();
