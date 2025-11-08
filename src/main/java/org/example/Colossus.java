@@ -3,13 +3,8 @@ package org.example;
 public class Colossus extends Character implements Attacker {
     //TODO
 
-    public  Colossus(String name){
-        super();
-
-    }
-
-    public Colossus(String name, Weapon weapon, int hp, String type, boolean isAlive, int maxHp) {
-        super(name, weapon, hp, type,isAlive,maxHp);
+    public Colossus(String name) {
+        super(name, Type.COLOSSUS);
     }
 
     @Override

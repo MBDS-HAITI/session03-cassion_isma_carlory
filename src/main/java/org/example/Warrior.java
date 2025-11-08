@@ -1,14 +1,8 @@
 package org.example;
 
 public class Warrior extends Character implements Attacker {
-    //TODO
-
-    public  Warrior(String name){
-        super();
-    }
-
-    public Warrior(String name, Weapon weapon, int hp, String type,boolean isAlive, int maxHp) {
-        super(name, weapon, hp, type, isAlive,maxHp);
+    public Warrior(String name) {
+        super(name, Type.WARRIOR);
     }
 
     @Override
