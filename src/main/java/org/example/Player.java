@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -66,10 +67,25 @@ public  class Player {
             this.addCharacter(character);
         }
     }
-//    Allow player to create or instanciate his own character
-//    TODO : add Character using type, character name
-//    I think the type should be an enum
-//    public Character createCharacter() {
-//
-//    }
+
+//    know if the player is defeated
+    public boolean isDefeated() {
+        for(Character character : this.characters) {
+            if(character.isAlive()) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    public List<Character> getActiveCharacters() {
+        List<Character> activeCharacters = new ArrayList<>();
+        for(Character character : this.characters) {
+            if(character.isAlive()) {
+                activeCharacters.add(character);
+            }
+        }
+        return activeCharacters;
+    }
 }
