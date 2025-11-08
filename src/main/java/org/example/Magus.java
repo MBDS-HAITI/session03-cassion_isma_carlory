@@ -3,11 +3,8 @@ package org.example;
 public class Magus  extends Character implements Attacker, Healer {
     public static final int HEAL_POWER = 25;
 
-        public Magus(String name){
-           super();
-        }
-    public Magus(String name, Weapon weapon, int hp, String type,boolean isAlive, int maxHp) {
-        super(name, weapon, hp, type, isAlive, maxHp);
+    public Magus(String name) {
+        super(name, Type.MAGUS);
     }
 
     @Override
