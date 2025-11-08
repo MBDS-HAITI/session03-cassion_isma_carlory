@@ -9,23 +9,27 @@ public abstract class Character {
     protected Type type;
     protected int hp;
     protected int maxHp;
-    protected Weapon weapon;
+    private Weapon weapon;
     protected boolean isAlive;
 
     //static list of usedNames in the party
 
-    private static Set<String> usedNames = new HashSet<>();
+    private static final Set<String> usedNames = new HashSet<>();
 
     //region constructor
 
 
-    public Character(String name, Weapon weapon, int hp, Type type, boolean isAlive, int maxHp) {
+    public Character(String name, Type type) {
         this.name = name;
-        this.hp = hp;
-        this.maxHp = maxHp;
+        this.hp = type.getStartingHP();
+        this.maxHp = type.getMaxHP();
         this.type = type;
         this.isAlive = true;
-        this.weapon=weapon;
+        this.weapon= new Weapon(type.getWeaponName(), type.getWeaponPower());
+        if(usedNames.contains(name.toLowerCase())){
+            throw new IllegalStateException("Character name already used!");
+        }
+        usedNames.add(name.toLowerCase());
     }
 
     public Character() {
@@ -41,10 +45,6 @@ public abstract class Character {
 
     public Type getType() {
         return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 
     public int getHp() {
