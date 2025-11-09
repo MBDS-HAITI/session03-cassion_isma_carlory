@@ -1,4 +1,5 @@
 package org.example;
+
 import java.util.*;
 import java.util.Scanner;
 
@@ -6,8 +7,8 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
-    public static void main()
-    {
+
+    public static void main() {
 
 
         System.out.println("=== Bienvenue au Battle Arena ===");
@@ -18,42 +19,45 @@ public class Main {
         do {
             System.out.print("Entrez le nom du joueur 1 : ");
             name1 = scanner.nextLine().trim();
-            if(name1.isEmpty())
-            {
+            if (name1.isEmpty()) {
                 System.out.println("Le nom ne peut pas etre vide");
 
             }
 
 //            Player player2 = new Player(scanner.nextLine());
         }
-        while(name1.isEmpty());
+        while (name1.isEmpty());
 
-        do
-        {
+        do {
             System.out.print("Entrez le nom du joueur 2 : ");
             name2 = scanner.nextLine().trim();
 
-            do
-            {
-            if(name2.isEmpty())
-            {
+//            do
+//            {
+            if (name2.isEmpty()) {
                 System.out.println("Le nom ne peut pas etre vide");
             }
-            else{
-                System.out.println("Les deux noms doivent etre differents");
-                System.out.print("Entrez le nom du joueur 2 : ");
-                name2 = scanner.nextLine().trim();
-
-            }
-            }
-
-
-//            else if(name1.equalsIgnoreCase(name2)){
+//            else{
 //                System.out.println("Les deux noms doivent etre differents");
+//                System.out.print("Entrez le nom du joueur 2 : ");
+//                name2 = scanner.nextLine().trim();
+//
 //            }
-            while(name1.equalsIgnoreCase(name2));
+//            }
+//
+//
+////            else if(name1.equalsIgnoreCase(name2)){
+////                System.out.println("Les deux noms doivent etre differents");
+////            }
+//            while(name1.equalsIgnoreCase(name2));
         }
-        while(name2.isEmpty());
+        while (name2.isEmpty());
+
+        while (name1.equalsIgnoreCase(name2) || name2.isEmpty()) {
+            System.out.println("Les deux noms doivent etre differents");
+            System.out.print("Entrez le nom du joueur 2 : ");
+            name2 = scanner.nextLine().trim();
+        }
 
         Player player1 = new Player(name1);
         Player player2 = new Player(name2);
@@ -66,18 +70,17 @@ public class Main {
 
         //Start the battle
 
-        Battle battle = new Battle(player1,player2);
+        Battle battle = new Battle(player1, player2);
         battle.start();
 
 
     }
 
-    private static void createTeam(Player player)
-    {
+    private static void createTeam(Player player) {
         Set<String> usedNames = new HashSet<>();
         Set<Type> usedTypes = new HashSet<>();
 
-        for(int i=1;i<=3;i++) {
+        for (int i = 1; i <= 3; i++) {
             System.out.println("\nCaractere " + i + " pour " + player.getName());
 
 

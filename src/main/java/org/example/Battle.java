@@ -22,6 +22,7 @@ public class Battle {
 
         while (!player1.isDefeated() && !player2.isDefeated())
         {
+            countRound++;
             System.out.println("\n ---- Round " + countRound + "----");
             System.out.println("Tour de " + actif.getName());
 
@@ -81,17 +82,17 @@ public class Battle {
     {
         System.out.println("Equipe "+ player1.getName());
         player1.getCharacters().forEach(character ->
-                System.out.println(" - "+character.getName() + character.getHp()+ "HP"));
+                System.out.println(" - "+character.getName() + " <---> " + character.getHp()+ "HP"));
 
         System.out.println("Equipe "+ player2.getName());
         player2.getCharacters().forEach(character ->
-                System.out.println(" - "+character.getName() + character.getHp()+ "HP"));
+                System.out.println(" - "+character.getName() + " <---> " + character.getHp()+ " HP"));
 
     }
 
     private Character chooseAlveCharacter(Player player, Scanner scanner)
     {
-        List<Character> aliveCharacters = player.getCharacters();
+        List<Character> aliveCharacters = player.getActiveCharacters();
         if(aliveCharacters.isEmpty())
         {
             System.out.println(" Aucun personnage vivant pour "+player.getName());
@@ -102,7 +103,7 @@ public class Battle {
         System.out.println("\n"+ player.getName()+ ", chosis un personnage");
         for(int i=0;i<aliveCharacters.size();i++){
             Character c= aliveCharacters.get(i);
-            System.out.printf("[%d] %s (%s, %d HP) %n",i+1,c.getName(), c.getType().name(),c.getHp());
+            System.out.printf("[%d] %s (%s, %d HP) %n ",i+1,c.getName(), c.getType().name(),c.getHp());
         }
 
         //read and validate the choice
